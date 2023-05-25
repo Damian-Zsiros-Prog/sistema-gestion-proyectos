@@ -6,7 +6,7 @@ include "./components/verificationLogued.php";
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gestionar proyectos | Sistema de gestion de proyectos</title>
+  <title>Gestionar tareas de proyecto | Sistema de gestion de proyectos</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,7 +26,7 @@ include "./components/verificationLogued.php";
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Proyectos</h1>
+            <h1>Tareas de proyecto</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -44,24 +44,28 @@ include "./components/verificationLogued.php";
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>Nombre</th>
                       <th>Descripcion</th>
+                      <th>Fecha inicio</th>
+                      <th>Fecha finalizacion</th>
+                      <th>Estado</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
                       require_once "./app/functionProyectos.php";
-                      $proyectos = getProyectOfUser($_SESSION['infoUser']['idUsuario']);
-                      foreach ($proyectos as $proyecto => $value) {
+                      $tares = getTaskForProyect($_GET['idProyecto']);
+                      foreach ($tares as $key => $tarea) {
                         ?>
-                       <tr> <td><?php echo $value['idUsuario']?></td>
-                          <td><?php echo $value['Nombre']?></td>
-                          <td><?php echo $value['Description']?></td>
+                       <tr> 
+                          <td><?php echo $tarea['idTareas']?></td>
+                          <td><?php echo $tarea['descripcion']?></td>
+                          <td><?php echo $tarea['fechaInicio']?></td>
+                          <td><?php echo $tarea['fechaFinalizacion']?></td>
+                          <td><?php echo $tarea['estado']?></td>
                           <td style="display: flex;flex-direction: column;justify-content: flex-start;">
-                            <a href="./gestionar_tareas_proyecto.php?idProyecto=<?php echo $value['idProyectos']?>">Ver tareas del proyecto</a>
-                            <a href="./ver_tareas_proyecto.php?idProyecto=<?php echo $value['idProyectos']?>">Editar proyecto</a>
-                            <a href="./deleteProyecto.php?idProyecto=<?php echo $value['idProyectos']?>">Eliminar proyecto</a>
+                            <a href="./ver_tareas_proyecto.php?idProyecto=<?php echo $value['idTareas']?>">Editar tarea</a>
+                            <a href="./deleteProyecto.php?idProyecto=<?php echo $value['idTareas']?>">Eliminar tarea</a>
                           </td></tr>
                         <?php
                       }                    

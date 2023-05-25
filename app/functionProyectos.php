@@ -12,3 +12,23 @@ function getProyectOfUser($idUser)
     }
     return $proyectos;
 }
+
+function getTaskForProyect($idProyecto)
+{
+    $tareas = array();
+    $con = getConnection();
+    $sql = "SELECT * FROM tareas_proyectos WHERE idProyecto=" . $idProyecto;
+    $result = mysqli_query($con, $sql);
+    while ($fila = mysqli_fetch_assoc($result)) {
+        array_push($tareas, $fila);
+    }
+    return $tareas;
+}
+
+function deleteProyect($idProyecto)
+{
+    $con = getConnection();
+    $sql = "DELETE FROM proyectos WHERE idProyectos=" . $idProyecto;
+    $result = mysqli_query($con, $sql);
+    return $result;
+}
