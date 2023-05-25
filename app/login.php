@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($email) || !isset($password)) {
         return header("Location: ../index.php");
     }
-    $passwordHashed=md5($password);
+    $passwordHashed = md5($password);
     $con = getConnection();
     $sql = "SELECT * FROM usuario WHERE email='" . $email . "' AND contraseña='" . $passwordHashed . "'";
     $result = mysqli_query($con, $sql);
@@ -15,19 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['logued'] = true;
         $_SESSION['infoUser'] = mysqli_fetch_assoc($result);
         return header("Location: ../admin.php");
-    }
-    session_start();
-    $sql = "SELECT * FROM usuarios_adminsitradores WHERE email='" . $email . "' AND contraseña='" . $passwordHashed . "'";
-    echo $sql;
-    $result = mysqli_query($con, $sql);
-    if (mysqli_num_rows($result) > 0) {
-        $_SESSION['logued'] = true;
-        $_SESSION['infoUser'] = mysqli_fetch_assoc($result);
-        return header("Location: ../admin.php");
-    }else{
-        
-    $_SESSION['logued'] = false;
-    return header("Location: ../index.php");
+    } else {
+        $_SESSION['logued'] = false;
+        return header("Location: ../index.php");
     }
 } else {
     echo "Error de metodo de envio...";
