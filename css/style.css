@@ -1,0 +1,68 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(22, 22, 22, 0.95),
+      rgba(0, 0, 0, 0.89)
+    ),
+    url(https://p4.wallpaperbetter.com/wallpaper/616/547/693/landscapes-nature-lakes-1920x1080-nature-lakes-hd-art-wallpaper-preview.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  max-width: 80px;
+  object-fit: cover;
+}
+
+main {
+  width: 100%;
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form h1 {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 28px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+form input {
+  appearance: none;
+  margin: 12px 0;
+  background-color: transparent;
+  padding: 12px;
+  min-width: 300px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  outline: none;
+}
+
+form input::placeholder {
+  color: #fff;
+}
+
+form button[type="submit"] {
+  background-color: #42d08a;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
