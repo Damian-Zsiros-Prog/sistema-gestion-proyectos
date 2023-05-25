@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_num_rows($result) > 0) {
         session_start();
         $_SESSION['logued'] = true;
+        $_SESSION['infoUser'] = mysqli_fetch_assoc($result);
         return header("Location: ../admin.php");
     }
     session_start();
@@ -21,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = mysqli_query($con, $sql);
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['logued'] = true;
+        $_SESSION['infoUser'] = mysqli_fetch_assoc($result);
         return header("Location: ../admin.php");
     }else{
         
