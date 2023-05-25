@@ -32,3 +32,12 @@ function deleteProyect($idProyecto)
     $result = mysqli_query($con, $sql);
     return $result;
 }
+
+
+function createProyect($nombre,$descripcion)
+{
+    $con = getConnection();
+    $sql = "INSERT INTO proyectos ";
+    $result = mysqli_query($con, $sql);
+    return $result;
+}
