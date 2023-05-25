@@ -42,8 +42,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="./admin.php" class="nav-link active">
+          <li class="nav-item">
+            <?php
+              $actual_link = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            ?>
+            <a href="./admin.php" class="nav-link <?php if(str_contains($actual_link,"admin")) echo "active" ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -52,7 +55,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="./gestionar_proyectos.php" class="nav-link">
+            <a href="./gestionar_proyectos.php" class="nav-link <?php if(str_contains($actual_link,"gestionar_proyectos")) echo "active" ?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Proyectos
