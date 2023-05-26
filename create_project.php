@@ -7,7 +7,7 @@ include "./components/verificationLogued.php";
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gestionar proyectos | Sistema de gestion de proyectos</title>
+  <title>Crear proyecto neuvo | Sistema de gestion de proyectos</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -40,17 +40,17 @@ include "./components/verificationLogued.php";
         <div class="card card-primary">
           <!-- /.card-header -->
           <!-- form start -->
-          <form>
+          <form action="./crearProyecto.php" method="POST">
             <div class="card-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nombre</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre" required>
+                <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" placeholder="Nombre" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Descripcion</label>
                 <textarea name="descripcion" id="" placeholder="Descripcion" class="form-control" required></textarea>
               </div>
-              
+
             </div>
             <!-- /.card-body -->
 
