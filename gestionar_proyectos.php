@@ -63,7 +63,7 @@ include "./components/verificationLogued.php";
                   foreach ($proyectos as $proyecto => $value) {
                   ?>
                     <tr>
-                      <td><?php echo $value['idUsuario'] ?></td>
+                      <td><?php echo $value['idProyectos'] ?></td>
                       <td><?php echo $value['Nombre'] ?></td>
                       <td><?php echo $value['Description'] ?></td>
                       <td style="display: flex;flex-direction: column;justify-content: flex-start;">
