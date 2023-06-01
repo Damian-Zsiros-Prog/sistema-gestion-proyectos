@@ -71,7 +71,7 @@ include "./components/verificationLogued.php";
                       <td><?php echo $tarea['fechaFinalizacion'] ?></td>
                       <td><?php echo $tarea['estado'] ?></td>
                       <td style="display: flex;flex-direction: column;justify-content: flex-start;">
-                        <a href="./deleteTaskForProject.php?idTarea=<?php echo $tarea['idTareas'] ?>">Eliminar tarea</a>
+                        <a href="./deleteTaskForProject.php?idTarea=<?php echo $tarea['idTareas'] ?>&idProyecto=<?php echo $_GET['idProyecto'] ?>" class="btn btn-danger">Eliminar tarea</a>
                       </td>
                     </tr>
                   <?php
