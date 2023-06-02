@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2023 a las 07:37:52
+-- Tiempo de generación: 02-06-2023 a las 19:48:41
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -80,7 +80,7 @@ CREATE TABLE `tareas_proyectos` (
 --
 
 INSERT INTO `tareas_proyectos` (`idTareas`, `descripcion`, `fechaInicio`, `fechaFinalizacion`, `estado`, `idProyecto`) VALUES
-(6, 'saddsaads', '1221-02-12 00:21:00', '2022-03-12 12:21:00', 'En espera', 3);
+(15, 'Tarea prueba', '2006-03-10 10:00:00', '2006-03-10 12:00:00', 'En espera', 3);
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tareas_proyectos`
 --
 ALTER TABLE `tareas_proyectos`
-  MODIFY `idTareas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idTareas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
